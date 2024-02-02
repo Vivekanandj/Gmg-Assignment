@@ -26,7 +26,7 @@ const Signup = () => {
         // Check if passwords match
         if (formData.password !== formData.confirmPassword) {
             console.error('Passwords do not match');
-            notify('Password does not match', 'success')
+            notify('Password does not match', 'error')
             return;
         }
 
@@ -48,7 +48,7 @@ const Signup = () => {
 
         } catch (error) {
             setLoading(false)
-            notify('something went wrong!!', 'success')
+            notify('something went wrong!!', 'error')
             console.error('Signup error:', error);
         }
     };
