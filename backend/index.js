@@ -23,7 +23,7 @@ const pool = new Pool({
 });
 
 const corsOptions = {
-    origin: ["https://gmg-assignment-frontend.vercel.app","https://gmg-assignment-backend.vercel.app", "http://localhost:3000"],
+    origin: ["https://gmg-assignment-frontend.vercel.app","https://gmg-assignment-backend.vercel.app", "http://localhost:3000","*"],
     methods: ["POST", "GET", "PUT", "DELETE"],
     credentials: true,
   };
