@@ -22,7 +22,11 @@ const pool = new Pool({
     connectionString: postgresUrl + "?sslmode=require",
 });
 
-
+const corsOptions = {
+    origin: ["https://gmg-assignment-frontend.vercel.app","https://gmg-assignment-backend.vercel.app", "http://localhost:3000"],
+    methods: ["POST", "GET", "PUT", "DELETE"],
+    credentials: true,
+  };
 app.use(session({
     store: new pgSession({
         pool: pool,
@@ -37,7 +41,7 @@ app.use(session({
 }));
 
 // Enable CORS for all routes
-app.use(cors());
+app.use(cors(corsOptions));
 
 
 app.get('/', async (req, res) => {
